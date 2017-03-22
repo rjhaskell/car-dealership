@@ -1,0 +1,11 @@
+<h1>{{vm.car.title}}</h1>
+<ul>
+    <li>Make: {{vm.car.make}}</li>
+    <li>Model: {{vm.car.model}}</li>
+    <li>Year: {{vm.car.year}}</li>
+</ul>
+<div>
+    <a class="btn btn-primary" ui-sref="Cars">Go Back to Car List</a>
+    <a class="btn btn-default" ui-sref="CarEdit({id: vm.car.id})">Edit</a>
+    <a class="btn btn-danger" ui-sref="CarDelete({id: vm.car.id})">Delete</a>
+</div>

@@ -1,0 +1,26 @@
+<h1>Create Car</h1>
+<form name="carform" novalidate ng-submit="vm.createCar()">
+    <div class="form-group">
+        <label for="title">Title:</label>
+        <input id="title" name="cartitle" class="form-control" type="text" ng-model="vm.car.title" ng-required="true" />
+        <span ng-show="carform.cartitle.$touched && carform.cartitle.$error.required" class="error">
+            Car Title is required!!!
+        </span>
+    </div>
+    <div class="form-group">
+        <label for="na_releaseDate">NA Release Date:</label>
+        <input id="na_releaseDate" name="na_releaseDate" class="form-control" type="text" ng-model="vm.car.na_releaseDate"/>
+    </div>
+    <div class="form-group">
+        <label for="eu_releaseDate">EU Release Date:</label>
+        <input id="eu_releaseDate" class="form-control" type="text" ng-model="vm.car.eu_releaseDate" />
+    </div>
+    <div class="form-group">
+        <label for="publisher">Publisher:</label>
+        <input id="publisher" class="form-control" type="text" ng-model="vm.car.publisher" required />
+    </div>
+    <button class="btn btn-primary" type="submit">
+        Save
+    </button>
+    <a class="btn btn-danger" ui-sref="Cars">Cancel</a>
+</form>

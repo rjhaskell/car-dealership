@@ -1,0 +1,36 @@
+<h1>Our Vehicle Inventory</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                MAKE
+            </th>
+            <th>
+                MODEL
+            </th>
+            <th>
+                YEAR
+            </th>
+
+        </tr>
+
+        <div class="input-group input-group-sm">
+            <span class="input-group-addon glyphicon glyphicon-filter" title="filter by year"></span>
+            <input type="text" class="form-control" ng-model-options="{ debounce: 100 }" ng-model="vm.filterData">
+        </div>
+    </thead>
+    <tbody>
+        <tr ng-repeat="car in vm.carList">
+            <td>{{ car.make }}</td>
+            <td>{{ car.model }}</td>
+            <td>{{ car.year }}</td>
+
+            <td>            <!--View car details button-->
+                <a class="btn btn-primary" ui-sref="CarDetail({ id: car.id })">
+                    View
+                </a>
+            </td>
+        </tr>
+    </tbody>
+
+</table>
