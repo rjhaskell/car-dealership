@@ -30,9 +30,9 @@
     </thead>
     <tbody>
         <tr ng-repeat="car in vm.carList | filter: { $: vm.filterData}">
-            <td>{{ car.make }}</td>
-            <td>{{ car.model }}</td>
-            <td>{{ car.year }}</td>
+            <td><h4>{{ car.make }}</td>
+            <td><h4>{{ car.model }}</td>
+            <td><h4>{{ car.year }}</td>
 
             <td>
                 <!--View car details button-->

@@ -1,4 +1,5 @@
 body {
+    background-image: url(/data/logosWatermark.jpg);
     padding-top: 50px;
 }
 
@@ -6,5 +7,16 @@ body {
     background-color: #FA787E;
     }
 .error {
-    color:red;
+    color: light;
+}
+table {
+    font-weight: 200;
+      background-image: -webkit-linear-gradient(left,lightpink,transparent,lightblue,transparent, lightpink);
+
+}
+input.form-control {
+    background-image: -webkit-linear-gradient(left,lightpink,transparent,lightblue,transparent, lightpink);
+}
+select {
+     background-image: -webkit-linear-gradient(right, lightpink, transparent,lightblue, transparent);
 }
