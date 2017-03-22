@@ -23,7 +23,7 @@ namespace CarDealership.Views.Cars {
                 return;
             }
 
-            alert(`FAILED to delete ${this.car.title}!`);
+            alert(`FAILED to delete ${this.car}!`);
         }
     }
 }

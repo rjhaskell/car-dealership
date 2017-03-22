@@ -3,7 +3,15 @@
     <thead>
         <tr>
             <th>
-                MAKE
+                MAKE 
+                <select
+                    name="singleSelect" ng-model="vm.filterData">
+                    <option value="">-- Filter --</option>
+                    <option value="Dodge">Dodge</option>
+                    <option value="Chevrolet">Chevrolet</option>
+                    <option value="Subaru">Subaru</option>
+                    <option value="Ford">Ford</option>
+                </select>
             </th>
             <th>
                 MODEL
@@ -11,21 +19,23 @@
             <th>
                 YEAR
             </th>
-
+            <th class="input-group input-group-sm">
+                <span class="input-group-addon glyphicon glyphicon-filter" title="filter by vm.filterData"></span>
+                <input type="text" class="form-control" placeholder="Search by any MAKE MODEL or YEAR" ng-model-options="{ debounce: 100 }"
+                    ng-model="vm.filterData">
+            </th>
         </tr>
 
-        <div class="input-group input-group-sm">
-            <span class="input-group-addon glyphicon glyphicon-filter" title="filter by year"></span>
-            <input type="text" class="form-control" ng-model-options="{ debounce: 100 }" ng-model="vm.filterData">
-        </div>
+
     </thead>
     <tbody>
-        <tr ng-repeat="car in vm.carList">
+        <tr ng-repeat="car in vm.carList | filter: { $: vm.filterData}">
             <td>{{ car.make }}</td>
             <td>{{ car.model }}</td>
             <td>{{ car.year }}</td>
 
-            <td>            <!--View car details button-->
+            <td>
+                <!--View car details button-->
                 <a class="btn btn-primary" ui-sref="CarDetail({ id: car.id })">
                     View
                 </a>
